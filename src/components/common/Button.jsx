@@ -1,22 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import clsx from "clsx";
 
-const Button = ({ children, variant = "primary", onClick, className = "" }) => {
-  const baseStyles =
-    "px-6 py-3 rounded-full font-semibold transition-all duration-300 focus:outline-none";
-
-  const variants = {
-    primary:
-      "bg-primary text-white hover:bg-primary-dark focus:ring-2 focus:ring-primary",
-    secondary:
-      "bg-white text-primary border border-primary hover:bg-primary hover:text-white focus:ring-2 focus:ring-primary",
+export const Button = ({ children, variant = "primary", onClick }) => {
+  const base = "px-6 py-3 font-semibold rounded-lg transition-all duration-300";
+  const styles = {
+    primary: "bg-green-600 hover:bg-green-700 text-white shadow-lg",
+    secondary: "bg-white text-green-700 border border-green-700 hover:bg-green-100",
+    outline: "border border-white text-white hover:bg-white hover:text-green-700",
   };
 
   return (
-    <button
-      onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${className}`}
-    >
+    <button onClick={onClick} className={clsx(base, styles[variant])}>
       {children}
     </button>
   );
@@ -24,12 +19,9 @@ const Button = ({ children, variant = "primary", onClick, className = "" }) => {
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf(["primary", "secondary"]),
+  variant: PropTypes.oneOf(["primary", "secondary", "outline"]),
   onClick: PropTypes.func,
-  className: PropTypes.string,
 };
-
-export default Button;
 
 
 
