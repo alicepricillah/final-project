@@ -1,0 +1,1 @@
+<section id="contact" className="py-32 bg-gray-50"></section>
