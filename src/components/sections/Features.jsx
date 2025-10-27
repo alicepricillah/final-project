@@ -1,33 +1,57 @@
-import React from 'react';
-import { Rocket, ShieldCheck, Users } from 'lucide-react'; // Built-in icons
-import Card from '../common/Card';
+import React from "react";
+import { FaBroom, FaCar, FaTools } from "react-icons/fa";
+import { motion } from "framer-motion";
 
+// Services data
+const services = [
+  {
+    icon: <FaBroom className="text-indigo-600 w-10 h-10 mb-4" />,
+    title: "House Cleaning",
+    description: "Professional cleaning services for homes of all sizes.",
+  },
+  {
+    icon: <FaCar className="text-indigo-600 w-10 h-10 mb-4" />,
+    title: "Carpet Cleaning",
+    description: "Deep carpet cleaning to remove dirt, dust, and stains.",
+  },
+  {
+    icon: <FaTools className="text-indigo-600 w-10 h-10 mb-4" />,
+    title: "Other Services",
+    description: "Repairs, maintenance, and additional services to keep your property perfect.",
+  },
+];
+
+// Animation variants
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.6 },
+  }),
+};
+
+// Features component
 const Features = () => {
-  const features = [
-    {
-      icon: Rocket,
-      title: 'Fast Performance',
-      description: 'Experience lightning-fast load times and seamless browsing.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Secure Solutions',
-      description: 'Your privacy and data are protected with our secure systems.',
-    },
-    {
-      icon: Users,
-      title: 'Dedicated Support',
-      description: 'Our team is here 24/7 to help you achieve your goals.',
-    },
-  ];
-
   return (
-    <section id="features" className="py-24 bg-neutral-light">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-bold mb-12 text-neutral-dark">Our Features</h2>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <Card key={index} {...feature} />
+    <section id="services" className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Key Services</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+            >
+              {service.icon}
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <p className="text-gray-600">{service.description}</p>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -36,4 +60,8 @@ const Features = () => {
 };
 
 export default Features;
+
+
+
+
 

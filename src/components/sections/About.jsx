@@ -1,31 +1,33 @@
 import React from "react";
+import aboutImage from "../../assets/images/about.jpg"; // Make sure this image exists
 
 const About = () => {
-  const aboutImage = new URL("../../assets/about.jpg", import.meta.url).href;
-
   return (
-    <section
-      id="about"
-      className="py-20 bg-gray-50 text-gray-800 flex flex-col md:flex-row items-center justify-center gap-10 px-8 md:px-20"
-    >
-      <div className="md:w-1/2">
-        <img
-          rc={aboutImage}
-  alt="About our brand"
-  className="border-4 border-red-600 w-96 h-96 object-cover"
-/>
-      </div>
-      <div className="md:w-1/2">
-        <h2 className="text-4xl font-bold mb-4 text-indigo-600">About Us</h2>
-        <p className="text-lg leading-relaxed mb-4">
-          We are passionate about creating innovative solutions that empower
-          businesses and individuals to grow. Our team combines creativity,
-          technology, and dedication to deliver top-quality results.
-        </p>
-        <p className="text-lg leading-relaxed">
-          From concept to completion, we work closely with our clients to ensure
-          that every project reflects their goals and vision.
-        </p>
+    <section id="about" className="py-16 bg-white">
+      <div className="max-w-6xl mx-auto px-4 grid gap-8 lg:grid-cols-2 items-center">
+        {/* Text */}
+        <div>
+          <h2 className="text-3xl font-bold mb-4">About Us</h2>
+          <p className="text-gray-700 mb-4">
+            We are a dedicated team providing top-notch pest control and cleaning services.
+            Our mission is to ensure homes and businesses are safe, clean, and comfortable.
+          </p>
+          <p className="text-gray-700 mb-6">
+            With years of experience and a commitment to quality, we offer personalized
+            solutions that meet your unique needs. Trust us to protect your space and maintain hygiene standards.
+          </p>
+          <button className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition">
+            Learn More
+          </button>
+        </div>
+        {/* Image */}
+        <div className="flex justify-center">
+          <img
+            src={aboutImage}
+            alt="About us"
+            className="rounded-xl shadow-lg w-full max-w-md object-cover"
+          />
+        </div>
       </div>
     </section>
   );
