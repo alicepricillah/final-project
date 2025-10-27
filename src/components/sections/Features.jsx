@@ -1,58 +1,52 @@
 import React from "react";
-import { FaBroom, FaCar, FaTools } from "react-icons/fa";
+import { FaBroom, FaCar, FaTools, FaRegSmile } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-// Services data
 const services = [
   {
-    icon: <FaBroom className="text-indigo-600 w-10 h-10 mb-4" />,
+    icon: "FaBroom",
     title: "House Cleaning",
-    description: "Professional cleaning services for homes of all sizes.",
+    description: "Thorough and professional cleaning for your home."
   },
   {
-    icon: <FaCar className="text-indigo-600 w-10 h-10 mb-4" />,
-    title: "Carpet Cleaning",
-    description: "Deep carpet cleaning to remove dirt, dust, and stains.",
+    icon: "FaCar",
+    title: "Car Cleaning",
+    description: "Full-service car wash and detailing."
   },
   {
-    icon: <FaTools className="text-indigo-600 w-10 h-10 mb-4" />,
-    title: "Other Services",
-    description: "Repairs, maintenance, and additional services to keep your property perfect.",
+    icon: "FaTools",
+    title: "Repairs & Maintenance",
+    description: "Minor home repairs and maintenance services."
   },
+  {
+    icon: "FaRegSmile",
+    title: "Customer Satisfaction",
+    description: "We guarantee happy and satisfied clients."
+  }
 ];
 
-// Animation variants
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.2, duration: 0.6 },
-  }),
-};
+const iconMap = { FaBroom, FaCar, FaTools, FaRegSmile };
 
-// Features component
 const Features = () => {
   return (
     <section id="services" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Key Services</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
-              custom={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={cardVariants}
-            >
-              {service.icon}
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
-            </motion.div>
-          ))}
+        <h2 className="text-3xl md:text-4xl font-bold mb-12">Our Services</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => {
+            const Icon = iconMap[service.icon];
+            return (
+              <motion.div
+                key={index}
+                className="p-6 bg-white rounded shadow hover:shadow-lg transition"
+                whileHover={{ scale: 1.05 }}
+              >
+                <Icon className="text-indigo-500 text-4xl mb-4 mx-auto" />
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-gray-600">{service.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -60,6 +54,8 @@ const Features = () => {
 };
 
 export default Features;
+
+
 
 
 
