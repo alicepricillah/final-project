@@ -1,20 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Card = ({ icon: Icon, title, description }) => {
+const StatCard = ({ value, label, icon }) => {
   return (
-    <div className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300">
-      {Icon && <Icon className="w-12 h-12 text-primary mx-auto mb-4" />}
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+    <div className="flex items-start space-x-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+      {icon && (
+        <div className="flex-none w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center text-green-700">
+          {icon}
+        </div>
+      )}
+      <div>
+        <div className="text-2xl font-bold text-neutralDark">{value}</div>
+        <div className="text-sm text-gray-600">{label}</div>
+      </div>
     </div>
   );
 };
 
-Card.propTypes = {
-  icon: PropTypes.elementType,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+StatCard.propTypes = {
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  label: PropTypes.string.isRequired,
+  icon: PropTypes.node,
 };
 
-export default Card;
+export default StatCard;
