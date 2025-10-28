@@ -1,19 +1,26 @@
 import React from "react";
-import Hero from "./components/sections/Hero.jsx";
-import Features from "./components/sections/Features.jsx";
-import About from "./components/sections/About.jsx";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Features from "./components/sections/Features";
+import Stats from "./components/sections/Stats";
+import Contact from "./components/Contact"; 
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div>
       <Hero />
-      <Features />
       <About />
+      <Features />
+      <Stats />
+      <Contact />
     </div>
   );
-}
+};
 
 export default App;
+
+
+
 
 
 
