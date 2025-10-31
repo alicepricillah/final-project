@@ -1,13 +1,15 @@
 import React from "react";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import Features from "./components/sections/Features";
-import Stats from "./components/sections/Stats";
-import Contact from "./components/Contact"; 
+import Header from "./components/Header.jsx";
+import Hero from "./components/sections/Hero.jsx";
+import About from "./components/sections/About.jsx";
+import Features from "./components/sections/Features.jsx";
+import Stats from "./components/sections/Stats.jsx";
+import Contact from "./components/Contact.jsx";
 
 const App = () => {
   return (
-    <div>
+    <div className="pt-20">
+      <Header />
       <Hero />
       <About />
       <Features />
@@ -18,6 +20,9 @@ const App = () => {
 };
 
 export default App;
+
+
+
 
 
 
