@@ -1,19 +1,25 @@
-// src/App.jsx
 import React from "react";
-import Header from "./components/layout/Header";  // ✅ no curly braces
+
+import Header from "./layout/Header";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Features from "./components/sections/Features";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
+    <div className="font-sans bg-white">
       <Header />
       <main>
-        <section id="hero" className="h-screen flex items-center justify-center bg-neutralLight">
-          <h2 className="text-4xl font-bold text-primary">Welcome to SoftMax Fumigation</h2>
-        </section>
+        <Hero />
+        <About />
+        <Features />
+        <Contact />
       </main>
-    </>
+       <Footer />
+    </div>
   );
 }
 
 export default App;
-
