@@ -5,11 +5,13 @@ import SprayingImage from "../../assets/images/spraying.jpg";
 const Services = () => {
   return (
     <section id="services" className="bg-gray-50 text-gray-800 py-16 lg:py-24">
-      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
+      <div className="container mx-auto px-6 lg:px-20 flex flex-col md:flex-row items-center gap-12">
+
         {/* Left: Text */}
-        <div className="text-left space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-green-600">Our Services</h2>
+        <div className="md:w-1/2 text-center md:text-left space-y-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-green-600">
+            Our Services
+          </h2>
           <p className="text-gray-700 text-lg">
             At <span className="font-semibold text-green-600">SoftMax Fumigation</span>, we provide
             top-quality pest control and cleaning services using eco-friendly products.
@@ -20,27 +22,27 @@ const Services = () => {
         </div>
 
         {/* Right: Images */}
-        <div className="flex justify-center md:justify-start">
-          <div className="flex flex-col md:flex-row gap-4 max-w-[480px] w-full mx-auto">
-            
-            {/* Cleaning Image */}
-            <div className="w-full md:w-1/2 px-1">
+        <div className="md:w-1/2 flex justify-center md:justify-end gap-4 max-w-xl w-full mx-auto">
+          {/* Cleaning */}
+          <div className="w-1/2 px-1">
+            <div className="relative w-full h-72 md:h-80">
               <img
                 src={CleaningImage}
                 alt="Cleaning Service"
-                className="rounded-xl shadow-lg w-full h-64 md:h-72 object-cover"
+                className="rounded-xl shadow-lg w-full h-full object-cover"
               />
             </div>
+          </div>
 
-            {/* Spraying Image */}
-            <div className="w-full md:w-1/2 px-1">
+          {/* Spraying */}
+          <div className="w-1/2 px-1">
+            <div className="relative w-full h-72 md:h-80">
               <img
                 src={SprayingImage}
                 alt="Spraying Service"
-                className="rounded-xl shadow-lg w-full h-64 md:h-72 object-cover"
+                className="rounded-xl shadow-lg w-full h-full object-cover"
               />
             </div>
-
           </div>
         </div>
 
