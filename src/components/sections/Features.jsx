@@ -2,7 +2,6 @@ import React from "react";
 import EcoImage from "../../assets/images/eco.jpg";
 import TeamImage from "../../assets/images/team.jpg";
 
-// Features array
 const features = [
   {
     title: "Eco-Friendly Products",
@@ -17,7 +16,7 @@ const features = [
   {
     title: "24/7 Service",
     description: "We are available anytime you need.",
-    image: null, // No image
+    image: null,
   },
 ];
 
@@ -34,7 +33,6 @@ const Features = () => {
             key={i}
             className={`flex flex-col md:flex-row items-center gap-6 bg-white shadow-md p-6 rounded-xl border-l-4 border-green-500 hover:shadow-lg transition`}
           >
-            {/* Left: Text */}
             <div className={`${feature.image ? "md:w-1/2" : "w-full"} text-left`}>
               <h3 className="text-xl font-semibold text-green-600 mb-2">
                 {feature.title}
@@ -42,7 +40,6 @@ const Features = () => {
               <p className="text-gray-600">{feature.description}</p>
             </div>
 
-            {/* Right: Image (if exists) */}
             {feature.image && (
               <div className="md:w-1/2">
                 <img
