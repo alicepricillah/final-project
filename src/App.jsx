@@ -1,9 +1,8 @@
 import React from "react";
-
 import Header from "./layout/Header";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
 import Features from "./components/sections/Features";
+import Hero from "./components/sections/Hero";
+import Services from "./components/sections/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -13,13 +12,18 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Features />
+        <Services />
         <Contact />
       </main>
-       <Footer />
+      <Footer />
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
