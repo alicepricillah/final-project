@@ -1,27 +1,52 @@
 import React from "react";
+import LogoImage from "../../assets/images/logo.jpg";
 
 const Hero = () => {
   return (
-    <section
-      className="relative bg-cover bg-center h-screen flex items-center justify-center text-white"
-      style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1581579182281-b5a2f90d15ff?auto=format&fit=crop&w=1950&q=80')",
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div> {/* Overlay for readability */}
-      <div className="relative z-10 text-center px-6">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          SoftmaxFumigation Services
-        </h1>
-        <p className="text-lg md:text-2xl mb-6">
-          Professional Cleaning & Pest Control for Homes and Offices
-        </p>
-        <a
-          href="#contact"
-          className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded shadow transition"
-        >
-          Get a Free Quote
-        </a>
+    <section className="bg-white">
+      <div className="container mx-auto px-6 lg:px-20 py-24 flex flex-col lg:flex-row items-center">
+        
+        {/* Left: Text */}
+        <div className="lg:w-1/2 text-center lg:text-left">
+          <h1
+            className="text-4xl lg:text-6xl font-extrabold mb-4"
+            style={{ color: "#2C3E50" }}
+          >
+            SoftMax Fumigation
+          </h1>
+
+          {/* Logo under title */}
+          <div className="mb-6 w-full max-w-[250px] mx-auto lg:mx-0">
+            <img 
+              src={LogoImage} 
+              alt="SoftMax Fumigation Logo" 
+              className="w-full h-auto object-contain"
+            />
+          </div>
+
+          <p
+            className="text-lg lg:text-xl mb-8"
+            style={{ color: "#34495E" }}
+          >
+            Professional cleaning and spraying services to keep your environment safe and pest-free.
+          </p>
+
+          <button
+            className="px-6 py-3 rounded-lg transition duration-300"
+            style={{
+              backgroundColor: "#1ABC9C",
+              color: "white",
+            }}
+          >
+            Get Started
+          </button>
+        </div>
+
+        {/* Right: Empty for now */}
+        <div className="lg:w-1/2 mt-10 lg:mt-0 flex justify-center">
+          {/* Optional illustration or leave empty */}
+        </div>
+
       </div>
     </section>
   );
