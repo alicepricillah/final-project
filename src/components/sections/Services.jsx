@@ -5,10 +5,10 @@ import SprayingImage from "../../assets/images/spraying.jpg";
 const Services = () => {
   return (
     <section id="services" className="bg-gray-50 text-gray-800 py-16 lg:py-24">
-      <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        
+      <div className="max-w-7xl mx-auto px-6 lg:px-20 lg:flex lg:items-start lg:gap-12">
+
         {/* Left: Text */}
-        <div className="text-left space-y-4">
+        <div className="lg:w-1/2 space-y-4 text-left">
           <h2 className="text-3xl md:text-4xl font-bold text-green-600">Our Services</h2>
           <p className="text-gray-700 text-lg">
             At <span className="font-semibold text-green-600">SoftMax Fumigation</span>, we provide
@@ -19,27 +19,25 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Right: Images */}
-        <div className="flex flex-col md:flex-row justify-center md:justify-start items-center gap-4 w-full">
-          
+        {/* Right: Images side by side with visible gap */}
+        <div className="lg:w-1/2 flex justify-start gap-4 mt-6 lg:mt-0">
           {/* Cleaning Image */}
-          <div className="w-10/12 md:w-1/2">
+          <div className="w-48 h-48">
             <img
               src={CleaningImage}
               alt="Cleaning Service"
-              className="rounded-xl shadow-lg w-full h-64 md:h-72 object-cover"
+              className="rounded-xl shadow-lg w-full h-full object-cover"
             />
           </div>
 
           {/* Spraying Image */}
-          <div className="w-10/12 md:w-1/2">
+          <div className="w-48 h-48">
             <img
               src={SprayingImage}
               alt="Spraying Service"
-              className="rounded-xl shadow-lg w-full h-64 md:h-72 object-cover"
+              className="rounded-xl shadow-lg w-full h-full object-cover"
             />
           </div>
-
         </div>
 
       </div>

@@ -22,39 +22,37 @@ const features = [
 
 const Features = () => {
   return (
-    <section id="features" className="py-16 px-6 lg:px-20 bg-gray-50">
-      <div className="container mx-auto max-w-7xl flex flex-col gap-12">
-        <h2 className="text-3xl font-bold text-green-600 mb-8 text-left">
-          Our Features
-        </h2>
-
-        {features.map((feature, i) => (
-          <div
-            key={i}
-            className={`flex flex-col md:flex-row items-center gap-6 bg-white shadow-md p-6 rounded-xl border-l-4 border-green-500 hover:shadow-lg transition`}
-          >
-            {/* Left: Text */}
-            <div className={`${feature.image ? "md:w-1/2" : "w-full"} text-left`}>
-              <h3 className="text-xl font-semibold text-green-600 mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600">{feature.description}</p>
+    <section id="features" className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Left: Text */}
+        <div className="space-y-6 text-left">
+          <h2 className="text-3xl md:text-4xl font-bold text-green-600">
+            Our Features
+          </h2>
+          {features.map((feature, i) => (
+            <div key={i} className="space-y-2">
+              <h3 className="text-xl font-semibold text-green-600">{feature.title}</h3>
+              <p className="text-gray-700">{feature.description}</p>
             </div>
+          ))}
+        </div>
 
-            {/* Right: Image if exists, centered */}
-            {feature.image && (
-              <div className="md:w-1/2 flex justify-center">
-                <div className="w-full max-w-[300px]">
-                  <img
-                    src={feature.image}
-                    alt={feature.title}
-                    className="rounded-xl shadow-lg w-full object-cover h-48 md:h-56"
-                  />
-                </div>
+        {/* Right: Images side by side with equal size and space */}
+        <div className="flex justify-end gap-4">
+          {features
+            .filter((feature) => feature.image)
+            .map((feature, i) => (
+              <div key={i} className="w-48 h-48">
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="rounded-xl shadow-lg w-full h-full object-cover"
+                />
               </div>
-            )}
-          </div>
-        ))}
+            ))}
+        </div>
+
       </div>
     </section>
   );
