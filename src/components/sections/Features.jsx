@@ -18,7 +18,7 @@ const features = [
   {
     title: "24/7 Support",
     description: "We are always available anytime.",
-    image: null, // optional, no image
+    image: null, // optional
   },
 ];
 
@@ -26,8 +26,9 @@ const Features = () => {
   return (
     <SideBySideSection
       title="Our Features"
-      textContent={features.map(f => f.description)}
+      textContent={features.map((f) => f.description)}
       items={features}
+      lgTextLeft={true} // text stays on left for LG
     />
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
-import LogoImage from "../../assets/images/logo.jpg"; // Your logo
-// Uncomment these if you want images in hero
+import LogoImage from "../../assets/images/logo.jpg";
+// Optional images
 // import cleaningImg from "../../assets/images/cleaning.jpg";
 // import sprayingImg from "../../assets/images/spraying.jpg";
 
@@ -11,19 +11,13 @@ const Hero = () => {
         
         {/* Text Section */}
         <div className="lg:w-1/2 text-center lg:text-left">
-          <h1
-            className="text-4xl lg:text-6xl font-extrabold mb-6"
-            style={{ color: "#2C3E50" }}
-          >
-            SoftMax Fumigation
-          </h1>
 
           {/* Logo */}
           <div className="mb-8 flex justify-center lg:justify-start">
             <img
               src={LogoImage}
               alt="SoftMax Fumigation Logo"
-              className="w-32 h-32 md:w-40 md:h-40 object-contain"
+              className="w-20 h-20 md:w-24 md:h-24 object-contain"
             />
           </div>
 
@@ -40,8 +34,7 @@ const Hero = () => {
         </div>
 
         {/* Optional Images Section */}
-        {/* Uncomment if you want side images */}
-        {/* 
+        {/*
         <div className="lg:w-1/2 mt-10 lg:mt-0 flex justify-center lg:justify-end gap-4">
           <img
             src={cleaningImg}

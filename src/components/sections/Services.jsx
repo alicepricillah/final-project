@@ -25,9 +25,9 @@ const Services = () => {
         "Our professional team ensures every corner of your space is hygienic and pest-free.",
       ]}
       items={services}
+      lgTextLeft={true} // ensures text stays on left for LG
     />
   );
 };
 
 export default Services;
-
