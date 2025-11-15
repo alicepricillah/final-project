@@ -1,12 +1,18 @@
 // App.jsx
 import React from "react";
-import Header from "./layout/Header";
-import Hero from "./components/sections/Hero";
-import Services from "./components/sections/Services";
-import About from "./components/sections/About";
-import Features from "./components/sections/Features";
-import Contact from "./components/sections/Contact";
-import Footer from "./components/Footer";
+
+// Layout
+import Header from "./layout/Header.jsx";
+
+// Sections
+import Hero from "./components/sections/Hero.jsx";
+import Services from "./components/sections/Services.jsx";
+import About from "./components/sections/About.jsx";
+import Features from "./components/sections/Features.jsx";
+import Contact from "./components/sections/Contact.jsx";
+
+// Footer
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
