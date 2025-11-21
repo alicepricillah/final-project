@@ -1,7 +1,7 @@
-# SoftMax Fumigation: Make Your Home Pest Free
+# Softmax fumigation 
 
 ## Live Demo
-[https://vercel.com/alice-osiekos-projects/final-project/2W5WizqkfynBqN6Hn6UDWAvJAYsk]
+## [https://final-project-a8tedfrqv-alice-osiekos-projects.vercel.app]
 
 ## Project Overview
 
