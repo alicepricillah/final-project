@@ -1,53 +1,70 @@
-// src/components/sections/Services.jsx
-import React from "react";
+// src/components/sections/DetailedService.jsx
+import React from 'react';
 
-function Services() {
+const CheckListItem = ({ text }) => (
+  <li className="flex items-start space-x-3">
+    <span className="flex-shrink-0 text-primary mt-1">✔️</span>
+    <p className="text-lg text-gray-700">{text}</p>
+  </li>
+);
+
+const DetailedService = () => {
   return (
-    <section id="services" className="py-20 bg-gray-100">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold mb-6 text-green-700">
-          Our Services
-        </h2>
+    <section className="py-20 lg:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
-          We provide professional fumigation and cleaning services tailored to
-          your home and workplace needs.
-        </p>
+          {/* LEFT – IMAGE */}
+          <div className="order-last lg:order-first space-y-6">
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {/* Service 1 */}
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
-            <h3 className="text-xl font-bold mb-4 text-green-700">
-              Home Fumigation
-            </h3>
-            <p className="text-gray-600">
-              Effective pest treatments to keep your home safe and clean.
-            </p>
+            {/* Main cleaning service image */}
+            <img 
+              src="/src/assets/images/cleaning.jpg" 
+              alt="SoftMax Cleaning Service"
+              className="w-full h-auto object-cover rounded-lg shadow-2xl"
+              loading="lazy"
+            />
+
+            {/* Secondary spraying service image */}
+            <img 
+              src="/src/assets/images/spraying.jpg"
+              alt="SoftMax Spraying Service"
+              className="w-full h-auto object-cover rounded-lg shadow-xl"
+              loading="lazy"
+            />
           </div>
 
-          {/* Service 2 */}
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
-            <h3 className="text-xl font-bold mb-4 text-green-700">
-              Office Sanitation
-            </h3>
-            <p className="text-gray-600">
-              Maintain a hygienic workplace with our professional cleaning.
-            </p>
-          </div>
+          {/* RIGHT – TEXT */}
+          <div className="order-first lg:order-last">
+            <h2 className="text-4xl font-extrabold text-neutral-dark mb-6">
+              Why Choose <span className="text-secondary">SoftMax Fumigation</span> Services?
+            </h2>
 
-          {/* Service 3 */}
-          <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
-            <h3 className="text-xl font-bold mb-4 text-green-700">
-              Pest Prevention
-            </h3>
-            <p className="text-gray-600">
-              Long-term pest prevention solutions to protect your property.
+            <p className="text-gray-600 text-lg mb-10 leading-relaxed">
+              We combine organic-safe products and professional spraying techniques 
+              to eliminate pests effectively while protecting your home, health, and pets.
             </p>
+
+            <ul className="space-y-6">
+              <CheckListItem text="Professional Spraying & Deep Cleaning Services" />
+              <CheckListItem text="Eco-Friendly, Non-Toxic Solutions" />
+              <CheckListItem text="Advanced Equipment for Accurate Application" />
+              <CheckListItem text="Certified & Trained Technicians" />
+              <CheckListItem text="24/7 Fast Support and Emergency Response" />
+            </ul>
+
+            <a 
+              href="#services" 
+              className="mt-10 inline-block text-lg font-bold text-primary hover:text-accent transition duration-300"
+            >
+              VIEW ALL SERVICES →
+            </a>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
-export default Services;
+export default DetailedService;

@@ -1,20 +1,22 @@
-module.exports = {
-  content: ["./src/*/.{js,jsx,ts,tsx}", "./public/index.html"],
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
-        primary: "#0E7490", // Teal-blue for trust & freshness
-        secondary: "#22C55E", // Green accent (clean, eco-friendly)
-        accent: "#FACC15", // Bright yellow for CTA
-        "neutral-dark": "#1E293B", // Deep gray for text
-        "neutral-light": "#F8FAFC", // Soft background
+        // Custom SoftMax Palette
+        'primary': '#007C3D',
+        'secondary': '#4A8AD3',
+        'accent': '#FF9900',
+        'neutral-dark': '#1F2937',
+        'neutral-light': '#F9FAF8',
       },
-      fontFamily: {
-        heading: ["Poppins", "sans-serif"],
-        body: ["Inter", "sans-serif"],
-      },
+      // You can add custom fonts here later if needed
     },
   },
-
   plugins: [],
-};
+}

@@ -1,28 +1,77 @@
-// SoftMaxLandingPage.js - Navigation Bar (Section 1)
+// src/components/layout/Navigation.jsx
+import React, { useState } from 'react';
 
-// Note: These constants should be defined at the top of your file.
-const LOGO_IMAGE = 'logo.jpg'; 
+const NavLink = ({ children, isMobile = false }) => (
+  <a 
+    href="#" 
+    className={`${isMobile ? 'block py-2 text-xl' : 'text-neutral-dark hover:text-primary transition duration-200 font-medium tracking-wide'}`}
+  >
+    {children}
+  </a>
+);
 
-<nav className="bg-green-700 text-white p-4 shadow-lg fixed w-full z-10">
-    <div className="container mx-auto flex justify-between items-center px-6">
-        {/* Logo and Brand Name */}
-        <a href="#top" className="flex items-center space-x-2">
-            <img src={LOGO_IMAGE} alt="SoftMax Logo" className="w-16 h-16 object-contain" />
-            <span className="text-2xl font-bold">SoftMax Fumigation</span>
-        </a>
-        
-        {/* Desktop Links */}
-        <div className="hidden md:flex space-x-6 font-semibold">
-            <a href="#about" className="hover:text-yellow-400 transition duration-300">About</a>
-            <a href="#services" className="hover:text-yellow-400 transition duration-300">Services</a>
-            <a href="#contact" className="bg-yellow-500 text-black px-4 py-2 rounded-lg font-bold hover:bg-yellow-400 transition duration-300">Get a Quote</a>
+const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = ['Home', 'Services', 'Organic Advantage', 'Testimonials', 'Blog'];
+
+  return (
+    <nav className="bg-white shadow-md relative z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <span className="text-2xl font-bold text-primary">
+              SoftMax Fumigation
+            </span>
+          </div>
+          
+          {/* Desktop Links */}
+          <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
+            {navItems.map(item => <NavLink key={item}>{item}</NavLink>)}
+          </div>
+          
+          {/* Utility Icons & CTA */}
+          <div className="flex items-center space-x-4">
+            <span className="text-xl text-neutral-dark hover:text-primary cursor-pointer transition hidden sm:block">
+                🔍
+            </span>
+            <span className="text-xl text-neutral-dark hover:text-primary cursor-pointer transition hidden sm:block">
+                👤
+            </span>
+            <button className="hidden lg:inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md text-white bg-accent hover:bg-opacity-90 transition duration-200 shadow-lg">
+                GET FREE QUOTE
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <button 
+              className="inline-flex items-center justify-center p-2 rounded-md text-neutral-dark hover:text-primary hover:bg-neutral-light focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? '✕' : '☰'}
+            </button>
+          </div>
         </div>
-        
-        {/* Mobile Menu Button (Functionality needs JavaScript/React state) */}
-        <button className="md:hidden text-white">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-        </button>
-    </div>
-</nav>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} absolute w-full bg-white shadow-xl`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          {navItems.map(item => (
+            <NavLink key={item} isMobile={true}>{item}</NavLink>
+          ))}
+          <div className="pt-4 pb-2">
+            <button className="w-full inline-flex items-center justify-center px-4 py-3 text-lg font-bold rounded-md text-white bg-accent hover:bg-opacity-90 transition duration-200 shadow-md">
+                GET FREE QUOTE
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
